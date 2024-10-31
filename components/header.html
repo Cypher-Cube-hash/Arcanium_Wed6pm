@@ -1,0 +1,39 @@
+<!-- This is a component for the header of the website, so you can just add it to 
+other pages that require this specific header format instead of recoding it,
+as that may take up a lot of time. Its an easy and efficient way of coding -->
+
+<div class="head_details between container-fluid">
+    <div class="between">
+        <img src="icon/logo.png" alt="" srcset="" height="60">
+        <h1>Arcanium</h1>
+    </div>
+    <div class="search p-2 rounded-3">
+        <input type="text" placeholder="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <div class="between right_header_bar">
+
+        <div class="between right_fir_header_bar position-relative">
+            <div class="theme">
+                <i id="sun" class="fa-solid fa-sun" style="font-size: 20px;"></i>
+                <i id="moon" class="fa-solid fa-moon" style="font-size: 20px;"></i>
+            </div>
+            <div class="between right_fir_header_bar_flag" >
+                <img src="data:image/png;base64,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" height="30">
+                <p class="mt-1">EN</p>
+                <i class="fa-solid fa-caret-down position-absolute" style="right: 3%; top: 42%; font-size: 23px;"></i>
+            </div>
+        </div>
+
+        <div class="between right_sec_header_bar">
+            <div class="between">
+                <i class="fa-solid fa-user" style="font-size: 22px;"></i>
+                <p>Sign In</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-cart-shopping" style="font-size: 20px;"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
