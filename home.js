@@ -50,6 +50,188 @@ startAutoSlide();
 
 
 
+
+
+
+
+
+
+/* ----------------------SMALLER SLIDER------------------- */
+
+let another_slider = document.querySelector('.another_slider_list');
+let another_items = document.querySelectorAll('.another_slider_item');
+let another_dots = document.querySelectorAll('.another_slider_dots li');
+
+let lengthItems = another_items.length - 1;
+let active = 0;
+
+// Function to move the slider
+function reloadSlider() {
+    another_slider.style.left = -another_items[active].offsetLeft + 'px';
+
+    // Update active dot
+    let last_active_dot = document.querySelector('.another_slider_dots li.active');
+    if (last_active_dot) {
+        last_active_dot.classList.remove('active');
+    }
+    another_dots[active].classList.add('active');
+}
+
+// Automatically move the slider every 3 seconds
+let refreshInterval = setInterval(() => {
+    active = active + 1 <= lengthItems ? active + 1 : 0;
+    reloadSlider();
+}, 6000);
+
+// Add event listeners for the dots
+another_dots.forEach((li, index) => {
+    li.addEventListener('click', () => {
+        active = index;
+        reloadSlider();
+    });
+});
+
+// Adjust the slider position on window resize
+window.onresize = () => {
+    reloadSlider();
+};
+
+// Initial load
+reloadSlider();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Dark Mode */
 /* let cnt = 0;
 document.querySelector(".sun").addEventListener("click", function() {
