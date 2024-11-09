@@ -3,7 +3,7 @@ container and add the inner html of the component to that container to make it w
 document.addEventListener("DOMContentLoaded", ()=>{
     fetch("components/header.html").then(response => response.text()).then(data => {
         document.querySelector("#header_container").innerHTML = data;
-
+        
         let current_page = window.location.pathname;
         theme();
     });

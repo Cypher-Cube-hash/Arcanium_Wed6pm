@@ -4,7 +4,7 @@ let slider = document.getElementsByClassName("slider_main")[0];
 let slides = document.querySelectorAll(".slider_main > div");
 
 let index = 0;
-let slider_interval = 8000;
+let slider_interval = 10000;
 let auto_sliding;
 
 function startAutoSlide(){
@@ -43,17 +43,6 @@ document.getElementById("previouse").addEventListener("click", function(){
 
 startAutoSlide();
 /* ---------------AUTOMATIC SLIDER END--------------- */
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ----------------------SMALLER SLIDER------------------- */
@@ -98,152 +87,3 @@ window.onresize = () => {
 
 // Initial load
 reloadSlider();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Dark Mode */
-/* let cnt = 0;
-document.querySelector(".sun").addEventListener("click", function() {
-    cnt++;
-    if (cnt % 2 === 0) {
-        document.getElementsByTagName("body")[0].classList.remove("light");
-        document.getElementsByTagName("body")[0].classList.add("dark");
-    } else {
-        document.getElementsByTagName("body")[0].classList.remove("dark");
-        document.getElementsByTagName("body")[0].classList.add("light");
-    }
-
-    console.log(cnt);
-}); */
-

@@ -76,6 +76,7 @@ header{
     border: none;
     width: 94%;
     background-color: transparent;
+    outline: none;
 }
 /* Article Home slider */
 .slider_main{
@@ -228,6 +229,9 @@ header{
 color: var(--light);
 }
 
+
+
+
 #line3{
     margin-top: 93px;
     color: rgb(254, 147, 147);
@@ -259,15 +263,6 @@ color: var(--light);
     left: 50%;
     transform: translateX(-50%);
     bottom: -7%;
-}
-
-
-
-.slide4{
-    background-color: cadetblue;
-}
-.slide5{
-    background-color: cornflowerblue;
 }
 
 
@@ -349,26 +344,41 @@ color: var(--light);
     float: right;
     height: 100%;
     width: 69%;
-    background-color: var(--highlight1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
 .node1{
+    position: relative;
     height: 41%;
     width: 100%;
     background-color: aquamarine;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.401), rgba(0, 0, 0, 0.171)), url(./img/map.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1.3rem;
 }
-/* .node2{
-    height: 35%;
-    width: 100%;
-    background-color: aquamarine;
-} */
+.node1 div h1,
+.node1 div h3{
+    color: var(--light);
+}
+.node1 div h3{
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+.node1 div h1{
+    width: 20ch;
+}
+
 .node3{
     height: 47%;
     width: 100%;
     background-color: aquamarine;
+    background: linear-gradient(34deg, rgba(0, 0, 0, 0.281), rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.363)), url(./img/decre.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 .theme{
@@ -416,4 +426,29 @@ slider for the bottom sect  */
 }
 .another_slider_dots li.active{
     width: 30px;
+}
+
+.trend_numbers{
+    position: relative;
+    height: 30svh;
+    width: 100%;
+    padding: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trend_numbers .trend_box_num{
+    width: 20%;
+    height: 67%;
+    padding: 5px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(232, 232, 232, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);   
+}
+.num{
+    color: rgb(79, 157, 0);
+    font-weight: bolder;
 }
