@@ -452,3 +452,168 @@ slider for the bottom sect  */
     color: rgb(79, 157, 0);
     font-weight: bolder;
 }
+
+
+.more_details{
+    position: relative;
+    height: 100svh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: inherit;
+    overflow: hidden;
+}
+/* .details_bar{
+    height: 100%;
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+.details_bar div p{
+    writing-mode: vertical-lr;
+    color: var(--dark);
+    font-weight: bold;
+} */
+
+/* USE LATER MAY BE WITHIN THE HEADER */
+/* .detailss_light{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+}
+.detailss_light img{
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7))
+          drop-shadow(0 0 20px rgba(0, 0, 0, 0.5))
+          drop-shadow(0 0 30px rgba(0, 0, 0, 0.3));
+    -webkit-box-reflect: below -50px 
+    linear-gradient(transparent, rgba(0, 0, 0, 0.3)); 
+} */
+
+
+.details_card_outline, 
+.details_card_outline1, 
+.details_card_outline2, 
+.details_card_outline3,
+.details_card_outline4,
+.details_card_outline5{
+    width: 450px;
+    height: 260px;
+    background-color: black;
+    left: 1%;
+    top: 7%;
+}
+.details_card_outline{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.099)), url("./img/emerald.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.details_card_outline1{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.099)), url("./img/amethyst.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.details_card_outline2{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.099)), url("./img/topz.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.details_card_outline4{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.099)), url("./img/saphire.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.details_card_outline3{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.099)), url("./img/ruby.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.details_card_outline5{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.863), rgba(0, 0, 0, 0.558), rgba(0, 0, 0, 0.127), rgba(0, 0, 0, 0.099)), url("./img/opal.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+.details_card_outline img{
+    position: absolute;
+    right: 0%;
+    top: -23%;
+}
+
+.details_card_outline1{
+    top: 50%;
+}
+.details_card_outline2{
+    left: 34%;
+    top: 7%;
+}
+.details_card_outline3{
+    top: 50%;
+    left: 34%;
+}
+.details_card_outline4{
+    top: 7%;
+    left: 67%;
+}
+.details_card_outline5{
+    left: 67%;
+    top: 50%;
+}
+
+.dtlcol{
+    color: #19a45c; 
+    background-image: linear-gradient(45deg, #19a45c 46%, #12ddf8 84%, #1efa7d 30%); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+.dtlcol1{
+    color: #c11ceb; 
+    background-image: linear-gradient(45deg, #c11ceb 0%, #6f19b5 50%, #25007a 100%); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+.dtlcol2{
+    color: #fffce3; 
+ background-image: linear-gradient(45deg, #dbc922 27%, #ded488 15%, #f6c011 74%); 
+ background-clip: text; 
+ -webkit-background-clip: text; 
+ -webkit-text-fill-color: transparent; 
+}
+.dtlcol3{
+    color: #d66565; 
+    background-image: linear-gradient(45deg, #e63939 74%, #c22323 63%, #820000 91%); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+.dtlcol4{
+    color: #d66565; 
+    background-image: linear-gradient(45deg, #39bee6 74%, #2363c2 63%, #003d82 91%); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
+.dtlcol5{
+    color: #8324c2; 
+    background-image: linear-gradient(135deg, #128291 54%, #00ff04 99%, #74e0a4 74%, #00818a 88%, #099512 86%); 
+    background-clip: text; 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+}
