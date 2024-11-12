@@ -45,6 +45,9 @@
     height: 100svh;
     width: 100%;
 }
+.info_containeerz{
+    height: 190svh;
+}
 
 /* ---------------------HEADER SET UP--------------------- */
 header{
@@ -752,8 +755,32 @@ slider for the bottom sect  */
     }
   }
 
-
-
+.products-container{
+    width: 100%;
+    max-height: 150vh;
+    display: grid;
+    grid-template-columns: 340px 340px 340px 340px;
+}
+.products-container-card{
+    position: relative;
+    width: 340px;
+    height: 400px;
+    background-color: var(--dark);
+}
+.products-container-card:hover{
+    scale: 1.002;
+    z-index: 3;
+    
+}
+.products-container-image{
+    height: 78%;
+    width: 100%;
+    background-color: var(--light);
+}
+.products-container-title{
+    height: 22%;
+    width: 100%;
+}
 
 
   /*-------------------------SHAWN GARDNERS CSS SECTION END------------------------- */

@@ -22,6 +22,7 @@ function theme(){
         const sunElement = document.getElementById("sun");
         const moonElement = document.getElementById("moon");
         const Footer = document.querySelector(".footer");
+        
 
         const theme_container = document.querySelector(".theme");
         moonElement.style.visibility = "hidden";
@@ -36,6 +37,7 @@ function theme(){
                     body.classList.add("dark");
                     Footer.classList.add("dark")
 
+
                     
                     sunElement.style.visibility = "hidden";
                     moonElement.style.visibility = "visible"; 
@@ -44,6 +46,7 @@ function theme(){
                     Footer.classList.remove("dark")
                     body.classList.add("light");
                     Footer.classList.add("light")
+
                     sunElement.style.visibility = "visible";
                     moonElement.style.visibility = "hidden";
                 }

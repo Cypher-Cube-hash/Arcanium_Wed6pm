@@ -1,4 +1,4 @@
-class Jewelry{
+export default class Jewelry{
     static productCount = 0;
     constructor(pname, price, description, image, type){
         this._pname = pname;
@@ -16,9 +16,4 @@ class Jewelry{
     setters(attr, value){
         return this[`_${attr}`] = value;
     }
-
-
-
 }
-
-module.exports = Jewelry;

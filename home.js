@@ -1,5 +1,4 @@
 /* ---------------AUTOMATIC SLIDER START--------------- */
-
 let slider = document.getElementsByClassName("slider_main")[0];
 let slides = document.querySelectorAll(".slider_main > div");
 
