@@ -1,7 +1,11 @@
 import { listProducts } from "../product.jewelry.js"
 
 const products = listProducts();
-// Step 1: Select 12 random products
+
+localStorage.setItem("AllProducts", JSON.stringify(products));
+const product_list = JSON.parse(localStorage.getItem("AllProducts"));
+
+
 function getRandomProducts(products, count) {
     const selectedProducts = [];
     const usedIndices = new Set();
@@ -19,7 +23,7 @@ function getRandomProducts(products, count) {
 
 let starz = document.querySelector(".products-container");
 
-let od = getRandomProducts(products, 8);
+let od = getRandomProducts(product_list, 8);
 starz.innerHTML = " ";
 od.forEach(function(odi){
     starz.innerHTML += `
