@@ -1,3 +1,4 @@
+
 /* ---------------AUTOMATIC SLIDER START--------------- */
 let slider = document.getElementsByClassName("slider_main")[0];
 let slides = document.querySelectorAll(".slider_main > div");
@@ -86,3 +87,11 @@ window.onresize = () => {
 
 // Initial load
 reloadSlider();
+
+function signInRedirect(){
+    window.location.href = "login.page.html"
+}
+
+function registerRedirect(){
+    window.location.href = "registartion.page.html"
+}

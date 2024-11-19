@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         
         let current_page = window.location.pathname;
         theme();
+        profilelog();
     });
 })
 
@@ -54,4 +55,13 @@ function theme(){
         } else {
             console.error("Element with ID 'sun' not found. Make sure it exists in the DOM.");
         }
+}
+
+
+function profilelog(){
+    if(document.location.href.includes("products.page.html")){
+        let user = JSON.parse(localStorage.getItem("current_user"));
+        const cred = document.querySelector(".i");
+        cred.textContent = user;
+    }
 }

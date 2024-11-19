@@ -56,6 +56,10 @@ header{
     width: 100%;
 }
 
+.signbx{
+    cursor: pointer;
+}
+
 .head_details{
     height: 100%;
     width: 100%;/* 
@@ -767,11 +771,17 @@ slider for the bottom sect  */
     height: 400px;
     background-color: var(--dark);
 }
-.products-container-card:hover{
-    scale: 1.002;
-    z-index: 3;
-    
+
+.card_fund_tag{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    width: 50%;
+    height: 10%;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    background-image: linear-gradient(to top, #4481eb 0%, #00a0d5 100%);
 }
+
 .products-container-image{
     height: 78%;
     width: 100%;
@@ -788,6 +798,136 @@ slider for the bottom sect  */
     height: 100svh;
     width: 100%;
 }
+.products_catalogue{
+    height: 90svh;
+    width: 100%;
+}
+.menu_options{
+    height: 100%;
+    width: 19%;
+    float: left;
+}
+.prodlist_right{
+    float: right;
+    height: 100%;
+    width: 80.3%;
+    grid-template-columns: 287px 287px 287px 287px;
+    background-color: #2f2f2f;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+.del{
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    
+}
+.menue_bar_options{
+    height: 100%;
+    width: 100%;
+    background-color: #0b0f0b;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+.logoutbtn{
+    height: 2.6rem;
+    width: 100%;
+    background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+    border: 1px outset rgba(28,110,164,0.79);
+border-radius: 0px 1px 0px 0px;
+}
 
 
   /*-------------------------SHAWN GARDNERS CSS SECTION END------------------------- */
+
+
+  /* ---------------------SIGN IN PAGE START-------------------- */
+  .signinpage{
+    height: 100svh;
+    width: 100%;
+    background-color:hsla(0,6%,19%,1);
+    background-image:
+    radial-gradient(at 40% 20%, hsla(0,0%,30%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(188,0%,19%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(0,0%,5%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(0,9%,6%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(0,2%,5%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(0,0%,22%,1) 0px, transparent 50%);
+  }
+
+ /*  .signinfoot{
+    height: 16svh;
+    width: 100%;
+    bottom: 0%;
+  } */
+.form_gen_container{
+    height: 100svh;
+    width: 100%;
+}
+.form_container{
+    height: 550px;
+    width: 400px;
+    backdrop-filter: blur(4px) saturate(180%);
+    -webkit-backdrop-filter: blur(4px) saturate(180%);
+    background-color: rgba(192, 192, 192, 0.13);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.form_container form{
+    height: 100%;
+    width: 100%;
+}
+.fcon{
+    width: 100%;
+}
+.fcon label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.fcon input[type="text"], 
+input[type="password"]{
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    color: #333;
+    width: 350px;
+    outline: none;
+    margin-bottom: 40px;
+}
+.fbtn{
+    width: 100%;
+    margin-bottom: 40px;
+}
+.chpasslink{
+    margin-bottom: 40px;
+}
+
+
+/* ---------------------REGISTER PAGE START-------------------- */
+.register_page{
+    height: 100svh;
+    width: 100%;
+    background-color:hsla(0,6%,19%,1);
+    background-image:
+    radial-gradient(at 40% 20%, hsla(0,0%,30%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsla(188,0%,19%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsla(0,0%,5%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, hsla(0,9%,6%,1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(0,2%,5%,1) 0px, transparent 50%),
+    radial-gradient(at 80% 100%, hsla(0,0%,22%,1) 0px, transparent 50%);
+}
+.register_container{
+    height: 86%;
+    width: 60%;
+    backdrop-filter: blur(4px) saturate(180%);
+    -webkit-backdrop-filter: blur(4px) saturate(180%);
+    background-color: rgba(192, 192, 192, 0.13);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+#reg_btn{
+    border: none;
+    cursor: pointer;
+    padding: 12px 36px;
+    
+}
