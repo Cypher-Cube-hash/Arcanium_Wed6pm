@@ -33,9 +33,9 @@ For demonstration purposes, use the following test login credentials:
 These credentials can be used to access the application and test its functionalities.
 
 ## Group Members
-1. ****
+1. **Shawn Garder** - ID# 2111438 (Product Page, Home Page)
 2. **La-Tavia Pearce** - ID# 2305853 (Cart page development, JavaScript functionality)
-3. ****
+3. **Tahj valentine** - ID# 2106795 (invoice page, js functionality)
 4. ****
 5. ****
 
