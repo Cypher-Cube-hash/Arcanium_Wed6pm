@@ -77,7 +77,27 @@ class Cart {
 	fuction loadSuggestedItems() {
 		const suggestedItemsList = document.getElementById("suggested-item-list");
 		const suggestedItems = [
-			new Jewelry("Eclispe Pendant", 120, "Gold pendant with diamond inlay", "./images/pendant.jpg", "Necklace"),
+			new Jewelry("Seren", 1350, "Seren is a graceful, timeless necklace featuring a delicate pendant that highlights natural beauty.", "./img/jewelry/necklace/neck7.jpg", "Necklace");
+			new Jewelry("Nora", 1400, "Nora offers clean lines and elegant simplicity, a versatile piece that adds sophistication to any look.", "./img/jewelry/necklace/neck8.jpg", "Necklace");
+			new Jewelry("Mira", 1600, "Mira showcases a sleek, modern design with a subtle touch of luxury, making it an everyday essential.", "./img/jewelry/necklace/neck9.jpg", "Necklace)
+	];
+
+	suggestedItems.forEach(item => {
+		const itemDiv = doucment.createElement("div");
+		itemDiv.className = "suggested-item";
+
+		itemDiv.innerHTMl = `
+  			<img src="${item.image}" alt="${item.name}" class="item-thumbnail">
+     			<p class="item-name">${item.name}</p>
+			<p class="item-price">$${item.pricetoFixed(2)}</p>
+   			<button class="btn btn-sm btn-primary" onclick="addItemToCart('${item.name}', 1)">Add to Cart</button>
+      `;
+
+	suggestedItemsList.appendChild(itemDiv);
+	});
+	} 
+// Call this function when the page loads
+document.addEventListener("DOMContentLoaded", loadSuggestedItems);
 }
 
 /* ----------EXAMPLE USAGE------------- */
