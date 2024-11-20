@@ -4,97 +4,104 @@
 *Instructions: This script allows items to be added, removed, quantities updated, and the cart to be cleared.
 */
 
-// Sample cart data for demonstration 
-const cartData = [
-	{ id: 1, name: "Ring", price: 100, quantity: 2 },
-	{ id: 2, name: "Necklace", price: 150, quantity: 1},
-];
+// Importing the the Jewlelry class for reference and use 
+import Jewelry from "./class.jewelry.js";
 
-// Function to render cart items 
-function renderCart() {
-	const cartItemsContainer = document.getElementById("cart-items-list");
-	cartItemsContainer.innerHTML = "";
-	let subtotal = 0;
+/* ----------CART ITEM CREATION------------*/
+Class CartItem {
+	Constructor(jewelryItem, quantity) {
+		this.name = jewelryItem.name;
+		this.price = jewelryItem.price;
+		this.description = jewelryItem.description;
+		this.image = jewelryItem.image;
+		this.category = jewelryItem.category;
+		this.quantity = quantity;
+		this.subTotal = this.calculateSubTotal();
+	}
 	
-	cartData.forEach(item => {
-		const itemTotal = item.price * item.quantity;
-		subtotal += itemTotal;
+	calculateSubTotal() {
+		return this.price * this.quantity;
+	}
+}
+
+/*----------CART Functionality--------*/
+class Cart {
+	constructor() {
+		this.items = []; // Array to store cart items 
+		this.taxRate = 0.15; // Example tax rate (15%)
+		this.discount = 0; // Discount value
+	}
+	
+	// Add an item to Cart 
+	addItem(jewelryItem, quantity = 1) {
+		// Check if item is already in cart 
+		const existingItem = this.items.find(item => item.name === jewelryItem.name);
 		
-		// Cart item HTMl structure 
-		const itemDiv = document.createElement("div");
-		itemDiv.classList.add("cart-item");
-		itemDiv.innerHTML = `
-			<p>${item.name} - $${item.price} x ${item.quantity} = $${itemTotal.toFixed(2)}</p>
-			<button onclick="removeItem(${item.id})">Remove</button>
-			<input type="number" min="1" value="${item.quantity}" onchange="updateQuantity(${item.id}, this.value)">
-		`;
-		cartItemsContainer.appendChild(itemDiv);
-	});
-	
-	// Set calculated values for summary
-	document.getElementById("subtotal").textContent = subtotal.toFixed(2);
-	document.getElementById("discount").textContent = calculateDiscount(subtotal)};
-	document.getElementById("tax-shipping").textContent = calculatedTax(subtotal);
-	document.getElementById("total").textContent = calculateTotal(subtotal);
-
-
-// Remove item from cart 
-function removeItem(itemId) {
-	const itemIndex = cartData.findIndex(item => item.id === itemId);
-	if (itemIndex > -1) {
-		cartData.splice(itemIndex, 1);
+		if (existingItem) {
+			existingItem.quantity += quantity; // Update quantity 
+			existingItem.subTotal = existingItem.calculateSubTotal(); // Recalculate subtotal 
+		} else {
+			this.items.push(new CartItem(jewelryItem, quantity)); // Add new item 
+		}
 	}
-	renderCart();
-}
-
-// Update of item 
-function updateQuantity(itemId, newQuantity) {
-	const item = cartData.find(item => item.id === itemId);
-	if (item) {
-		item.quantity = parseInt(newQuantity);
+	
+	// Remove an item from the cart 
+	removeItem(itemName) {
+		this.items = this.items.filter(item => item.name !== itemName);
 	}
-	renderCart();
-}
-
-// Calculate discount 
-function calculateDiscount(subtotal) {
-	return (subtotal * 0.1).toFixed(2);
-}
-
-// Calculate tax 
-function calculateTax(subtotal) {
-	return (subtotal * 0.08).toFixed(2);
-}
-
-// Calculate total price 
-function calculateTotal(subtotal) {
-	const discount = parseFloat(calculateDiscount(subtotal));
-	const tax = parseFloat(calculateTax(subtotal));
-	return (subtotal - discount + tax).toFixed(2);
-}
-
-// Clear all items from cart 
-document.getElementById("clear-all").addEventListener("click", () => {
-	cartData.length = 0;
-	renderCart(); 
-});
-
-// Check out - redirect to checkout page 
-document.getElementById("checkout").addEventListener("click", () => {
-	alert("Redirecting to checkout page...");
-	// Logic for checkout redirection here 
-});
-
-// Close cart view 
-document.getElementById("close-cart").addEventListener("click", () => {
-	alert("Closing cart view...");
-	// Logic for closing cart view here 
-});
-
-// Initial render of cart items 
-renderCart();
 	
-
-
+	// Update the quantity of a cart item 
+	updateItemQuantity(itemName, newQuantity) {
+		const item = this.items.find(item => item.name === itemName)'
+		if (item) {
+			item.quantity = newQuantity;
+			item.subTotal = item.calculateSubTotal();
+		}
+	}
 	
+	// Clear all items from the cart 
+	clearCart() {
+		this.items = [];
+	}
+	
+	// Calculate total price before tax and discount 
+	calculateTotal() {
+		return this.items.reduce((total, item) => total + item.subTotal, 0);
+	}
+	
+	// Set discount 
+	applyDiscount(discountValue) {
+		rhis.discount = discountValue;
+	}
+}
+
+/* ----------EXAMPLE USAGE------------- */
+//Create cart insurance 
+const cart = new Cart();
+
+// Add items to cart (using Jewelry objects from product.jewelry.js) 
+cart.addItem(ring1, 2); // Add 2 Titan's Oath rings
+cart.addItem(watch3); // Add 1 Rolex XII watch 
+cart.addItem(necklace4, 3); // Add 3 Arden necklaces 
+
+// Display cart items 
+console.log("cart Items:", cart.items);
+
+// Update quantity 
+cart.updateItemQuantity("Titan's Oath", 1);
+
+// Apply discount 
+cart.applyDiscount(100); // Apply $100 discount 
+
+// Calculate totals 
+console.log("Toal (Before Tax):", cart.calculateTotal());
+console.log("Grand Total (With Tax):", cart.calculateGrandTotal());
+
+// Remove an item 
+cart.removeItem("Rolex XII");
+
+// Clear the cart 
+// cart.clearCart();
+
+export default Cart;
 	
