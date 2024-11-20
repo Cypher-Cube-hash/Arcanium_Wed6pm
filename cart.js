@@ -73,6 +73,7 @@ class Cart {
 	applyDiscount(discountValue) {
 		rhis.discount = discountValue;
 	}
+}
 
 	fuction loadSuggestedItems() {
 		const suggestedItemsList = document.getElementById("suggested-item-list");
@@ -95,10 +96,9 @@ class Cart {
 
 	suggestedItemsList.appendChild(itemDiv);
 	});
-	} 
+} 
 // Call this function when the page loads
 document.addEventListener("DOMContentLoaded", loadSuggestedItems);
-}
 
 /* ----------EXAMPLE USAGE------------- */
 //Create cart insurance 
