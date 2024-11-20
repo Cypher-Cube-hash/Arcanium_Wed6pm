@@ -37,6 +37,11 @@ header nav a {
 	margin: 0 10px;
 }
 
+header nav a:hover {
+	text-decoration: underline;
+}
+
+/* Main Content */
 main {
 	flex: 1;
 	padding: 20px;
@@ -158,14 +163,6 @@ h2 {
 	color: #333;
 }
 
-.price-summary input[type="text"] {
-	width: 100%;
-	padding: 8px;
-	margin: 10px 0;
-	border-radius: 4px;
-	border: 1px solid #ccc;
-}
-
 .price-summary button {
 	width: 100%;
 	padding: 10px;
@@ -179,33 +176,10 @@ h2 {
 	color: #ffffff;
 }
 
-.price-summary button:nth-child(3) {
-	background-color: #007bff;
-	color: #ffffff;
-}
-
-.price-summary button:nth-child(3):hover {
+.price-summary button:hover) {
 	background-color: #0056b3;
 }
 
-.price-summary button:nth-last-child(2) {
-	background-color: #28a745;
-	color: #ffffff;
-}
-
-.price-summary button:nth-last-child(2):hover {
-	background-color: #218838;
-}
-
-.price-summary button:last-child {
-	background-color: #6c757d;
-	color: #ffffff;
-}
-
-.price-summary button:last-child:hover {
-	background-color: #5a6268;
-}
-	
 /* Cart Buttons */
 .cart-buttons {
 	display: flex;
@@ -252,7 +226,7 @@ button {
 
 /* Footer */
 footer {
-	background-color: #90D5FF;
+	background-color: #90d5ff;
 	color: #fff;
 	padding: 10px 20px;
 	display: flex;
@@ -275,6 +249,8 @@ footer a:hover {
 /* Suggested Items */
 .Suggested-items {
 	margn-top: 20px;
+	max-width: 700px;
+	width: 100%;
 }
 
 .suggested-items h3 {
@@ -283,26 +259,58 @@ footer a:hover {
 	margin-bottom: 15px;
 }
 
-.suggested-item-list {
+.suggested-items-list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 10px;
+	gap: 15px;
 }
 
-.suggested-item-list a {
-	display: block;
-	width: 100px;
-	height: 100px;
-	background-color: #f3f3f3;
+.suggested-item  {
+	width: calc(33.333% - 10px);
+	background-color: #ffffff;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 	border-radius: 8px;
-	overflow: hidden;
-	text-decoration: none;
+	text-align: center;
+	padding: 10px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.suggested-item-list a img {
+.suggested-item:hover {
+	transform: translateY(-5px);
+	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.suggested-item img {
 	width: 100%;
-	height: 100%;
-	object-fit: cover;
+	height: auto;
+	border-radius: 5px;
+}
+
+.suggested-item h4 {
+	margin: 10px 0 5px;
+	font-size: 1.1rem;
+	color: #333;
+}
+
+.suggested-item p {
+	margin: 5px 0;
+	font-sizee: 0.9rem;
+	color: #555;
+}
+
+.suggested-item button {
+	background-color: #007bff;
+	color: #ffffff;
+	padding: 8px 12px;
+	border: none;
+	border-radius: 5px;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.suggested-item button:hover {
+	background-color: #0056b3;
 }
 
 	
