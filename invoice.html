@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="w-50 mx-auto mt-5 mb-5">
+        <div class="form-group">
+            <label for="ids">Product ID</label>
+            <input type="number" class="form-control" id="ids">
+        </div>
+        <div class="form-group">
+            <label for="product">Product Name</label>
+            <input type="text" class="form-control" id="product">
+        </div>
+        <div class="form-group">
+            <label for="prc">Price</label>
+            <input type="number" class="form-control" id="prc">
+        </div>
+        <div class="form-group">
+            <label for="qty">Quantity</label>
+            <input type="number" class="form-control" id="qty" onchange="calculate()">
+        </div>
+        <div class="form-group">
+            <label for="amnt">Amount</label>
+            <input type="number" class="form-control" id="amnt" disabled>
+        </div>
+        <button type="button" class="btn btn-warning m-2" onclick="addData()">Add</button>
+    </form>
+    <hr>
+    <table class="table">
+        <thead id="tablehead">
+            <tr>
+                <th>ID</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody id="newtr"></tbody>
+    </table>
+    <hr>
+    <div class="w-50 mx-auto">
+        <h3>Invoice Summary</h3>
+        <p>Subtotal: <span id="subtotal-amount">0.00</span></p>
+        <p>Tax: 50.00</p>
+        <p>Total: <span id="total-amount">0.00</span></p>
+        <button type="button" class="btn btn-success" onclick="saveInvoice()">Save Invoice</button>
+        <button type="button" class="btn btn-primary" onclick="showInvoices()">View All Invoices</button>
+        <button type="button" class="btn btn-secondary" onclick="showUserFrequency()">Show User Frequency</button>
+    </div>
+    <hr>
+    <div id="dashboard" class="w-50 mx-auto"></div>
+    <div id="invoice-list" class="w-50 mx-auto"></div>
+
+  <!-- -------------------------FOOTER CREATION------------------------- -->
+  <footer class="footer">
+    <div class="footer__addr">
+      <h1>Arcanium</h1>
+          
+      <h2>Contact</h2>
+      
+      <address>
+        5534 Arcanium In. The World 22193-10212<br>
+            
+        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+      </address>
+    </div>
+    
+    <ul class="footer__nav">
+      <li class="nav__item">
+        <h2 class="nav__title">Shop</h2>
+  
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Necklaces</a>
+          </li>
+  
+          <li>
+            <a href="#">Rings</a>
+          </li>
+              
+          <li>
+            <a href="#">Bracelets</a>
+          </li>
+
+          <li>
+            <a href="#">Earrings</a>
+          </li>
+
+          <li>
+            <a href="#">Engagement Collection</a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="nav__item nav__item--extra">
+        <h2 class="nav__title">Customer Care</h2>
+        
+        <ul class="nav__ul nav__ul--extra">
+          <li>
+            <a href="#">Shipping & Delivery</a>
+          </li>
+          
+          <li>
+            <a href="#">Returns & Exchanges</a>
+          </li>
+          
+          <li>
+            <a href="#">FAQs</a>
+          </li>
+          
+          <li>
+            <a href="#">Jewelry Care Tips</a>
+          </li>
+          
+          <li>
+            <a href="#">Gift Cards</a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="nav__item">
+        <h2 class="nav__title">Discover</h2>
+        
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Our Story</a>
+          </li>
+          
+          <li>
+            <a href="#">Sustainability & Ethics</a>
+          </li>
+          
+          <li>
+            <a href="#">Blog</a>
+          </li>
+
+          <li>
+            <a href="#">Customer Reviews</a>
+          </li>
+
+          <li>
+            <a href="#">Jewelry Guides</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div class="legal">
+      <p>&copy; 2019 Arcanium. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
