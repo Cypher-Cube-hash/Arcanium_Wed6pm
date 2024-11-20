@@ -73,6 +73,11 @@ class Cart {
 	applyDiscount(discountValue) {
 		rhis.discount = discountValue;
 	}
+
+	fuction loadSuggestedItems() {
+		const suggestedItemsList = document.getElementById("suggested-item-list");
+		const suggestedItems = [
+			new Jewelry("Eclispe Pendant", 120, "Gold pendant with diamond inlay", "./images/pendant.jpg", "Necklace"),
 }
 
 /* ----------EXAMPLE USAGE------------- */
