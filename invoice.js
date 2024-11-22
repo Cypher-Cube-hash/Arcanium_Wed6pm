@@ -1,6 +1,6 @@
 const tax = 50;
 let invoices = JSON.parse(localStorage.getItem("AllInvoices")) || [];
-
+// Function to calculate amount
 function calculate() {
     const price = parseFloat(document.getElementById("prc").value) || 0;
     const quantity = parseInt(document.getElementById("qty").value) || 0;
@@ -90,6 +90,8 @@ function showInvoices() {
         `;
     });
 }
+// 6. Additional Functionality:
+// a. ShowUserFrequency() – Show’s user frequency based on Gender and Age Group:
 
 function showUserFrequency() {
     const userFrequency = {
