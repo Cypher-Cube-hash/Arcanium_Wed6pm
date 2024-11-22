@@ -12,7 +12,7 @@ list_products.forEach(element => {
                 <div><h5 class='text-light p-1 d-flex justify-content-between align-items-center'>${element._type}</h5> <button></button></div>
             </div>
             <div class='card_fund_tag d-flex justify-content-around align-items-center p-2' 
-    onclick="addCart('${element._pname.replace(/'/g, "\\'")}', ${element._price}, '${element._description.replace(/'/g, "\\'")}')">
+    onclick="addCart('${element._pname.replace(/'/g, "\\'")}', ${element._price}, '${element._description.replace(/'/g, "\\\'")}'); window.location.href = 'cart.html';">
 
               <p class="text-light" style="margin-top: 16px;">Add to Cart</p>
               <i class="fa-solid fa-cart-arrow-down text-light" style="font-size: 19px;"></i>
