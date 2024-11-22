@@ -8,7 +8,7 @@
 import Jewelry from "./class.jewelry.js";
 
 /* ----------CART ITEM CREATION------------*/
-Class CartItem {
+class CartItem {
 	Constructor(jewelryItem, quantity) {
 		this.name = jewelryItem.name;
 		this.price = jewelryItem.price;
@@ -58,14 +58,6 @@ class Cart {
 			item.subTotal = item.calculateSubTotal();
 		}
 	}
-
-	function navigateToCheckout() {
-		window.location.href = "CheckOut.html";
-	}
-
-	function navigateToProducts() {
-		window.location.href = "products.page.html";
-	}
 	
 	// Clear all items from the cart 
 	clearCart() {
@@ -76,35 +68,60 @@ class Cart {
 	calculateTotal() {
 		return this.items.reduce((total, item) => total + item.subTotal, 0);
 	}
-	
+
+	// Calculate grand total (with tax and discount)
+	calculateGrandTotal() {
+           const total = this.calculateTotal();
+           const tax = total * this.taxRate;
+           return total + tax - this.discount;
+	}
+
 	// Set discount 
 	applyDiscount(discountValue) {
-		rhis.discount = discountValue;
+		this.discount = discountValue;
 	}
 }
 
-	fuction loadSuggestedItems() {
+	function loadSuggestedItems() {
 		const suggestedItemsList = document.getElementById("suggested-item-list");
 		const suggestedItems = [
-			new Jewelry("Seren", 1350, "Seren is a graceful, timeless necklace featuring a delicate pendant that highlights natural beauty.", "./img/jewelry/necklace/neck7.jpg", "Necklace");
-			new Jewelry("Nora", 1400, "Nora offers clean lines and elegant simplicity, a versatile piece that adds sophistication to any look.", "./img/jewelry/necklace/neck8.jpg", "Necklace");
-			new Jewelry("Mira", 1600, "Mira showcases a sleek, modern design with a subtle touch of luxury, making it an everyday essential.", "./img/jewelry/necklace/neck9.jpg", "Necklace)
-	];
+			new Jewelry("Seren", 1350, "Seren is a graceful, timeless necklace featuring a delicate pendant that highlights natural beauty.", "./img/jewelry/necklace/neck7.jpg", "Necklace"),
+			new Jewelry("Nora", 1400, "Nora offers clean lines and elegant simplicity, a versatile piece that adds sophistication to any look.", "./img/jewelry/necklace/neck8.jpg", "Necklace"),
+			new Jewelry("Mira", 1600, "Mira showcases a sleek, modern design with a subtle touch of luxury, making it an everyday essential.", "./img/jewelry/necklace/neck9.jpg", "Necklace")
+	        ];
 
-	suggestedItems.forEach(item => {
-		const itemDiv = doucment.createElement("div");
-		itemDiv.className = "suggested-item";
+	        suggestedItems.forEach(item => {
+		   const itemDiv = doucment.createElement("div");
+		   itemDiv.className = "suggested-item";
 
-		itemDiv.innerHTMl = `
+		   itemDiv.innerHTMl = `
   			<img src="${item.image}" alt="${item.name}" class="item-thumbnail">
      			<p class="item-name">${item.name}</p>
 			<p class="item-price">$${item.pricetoFixed(2)}</p>
-   			<button class="btn btn-sm btn-primary" onclick="addItemToCart('${item.name}', 1)">Add to Cart</button>
-      `;
+   			<button class="btn btn-sm btn-primary" onclick="addItemToCart('${item.name}', ${item.price})">Add to Cart</button>
+                    `;
 
-	suggestedItemsList.appendChild(itemDiv);
-	});
-} 
+	           suggestedItemsList.appendChild(itemDiv);
+	       });
+           } 
+          function addItemToCart(name, price) {
+             const item = new Jewelry(name, price, "Description here", "image-path-here", "category");
+	     cart.addItem(item, 1);
+	     console.log(`${name} added to cart!`);
+	  }
+
+export default Cart;
+export { CartItem, loadSuggestedItems };
+
+function proceedToCheckout() {
+	window.location.href = "CheckOut.html";
+}
+
+function continueShopping() {
+	window.location.href = "products.page.html";
+}
+
+
 // Call this function when the page loads
 document.addEventListener("DOMContentLoaded", loadSuggestedItems);
 
