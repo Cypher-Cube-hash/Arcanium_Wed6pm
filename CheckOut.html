@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcanium</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Secure Payment with Arcanium</h1>
+        
+        <div class="product-info">
+            <h2>Selected Items:</h2>
+            <ul id="item-list"></ul>
+            <p id="total-amount">Balance Due: $0</p>
+            <div class="bonus-info">
+                <p style="font-size: 12px;">One bonus item per account. Refunds result in losing the item.</p>
+            </div>
+        </div>
+        
+        <div class="payment-options">
+            <p>Select payment type:</p>
+            <div class="payment-option" onclick="selectPayment('Credit Card')">
+                <img src="assets/credit.png" alt="Credit Card Icon">
+                <span>Credit Card</span>
+            </div>
+            <div class="payment-option" onclick="selectPayment('Debit Card')">
+                <img src="assets/debit.png" alt="Debit Card Icon">
+                <span>Debit Card</span>
+            </div>
+            <div class="payment-option" onclick="selectPayment('PayPal')">
+                <img src="assets/paypal.png" alt="PayPal Icon">
+                <span>PayPal</span>
+            </div>
+            <div class="payment-option" onclick="selectPayment('Redeem Items Card')">
+                <img src="assets/redeem.webp" alt="Redeem Code Icon">
+                <span>Redeem Items Card</span>
+            </div>
+            <div class="payment-option" onclick="selectPayment('Other')">
+                <img src="assets/others.png" alt="Other Icon">
+                <span>Other</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
