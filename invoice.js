@@ -1,5 +1,8 @@
+// 5. Invoice Generation:
+// a. After checkout, generate an invoice with the following details:
 const tax = 50;
 let invoices = JSON.parse(localStorage.getItem("AllInvoices")) || [];
+
 // Function to calculate amount
 function calculate() {
     const price = parseFloat(document.getElementById("prc").value) || 0;
@@ -32,9 +35,18 @@ function addData() {
 }
 
 function saveInvoice() {
-    const invoice = {
+    // Retrieve TRN from localStorage (assuming it's stored under 'RegisterData' key)
+    const userTrn = JSON.parse(localStorage.getItem("RegisterData"))?.trn || null;
+
+    if (!userTrn) {
+        alert("TRN not found. Please register or log in.");
+        return;
+    }
+// 5. Invoice Generation (Continued):
+// b. Append this invoice to the user’s array of invoices (array of objects). 
         invoiceNumber: Date.now(),
         date: new Date().toLocaleDateString(),
+        trn: userTrn, // Include the TRN in the invoice
         items: Array.from(document.querySelectorAll("#newtr tr")).map(row => {
             const cells = row.querySelectorAll("td");
             return {
@@ -50,8 +62,16 @@ function saveInvoice() {
         total: parseFloat(document.getElementById("total-amount").textContent),
     };
 
+ // b. ShowInvoices() - displays all invoices and allow the visitor to search for any of the invoices (using trn) stored in AllInvoices from localStorage using console.log().
+
     invoices.push(invoice);
     localStorage.setItem("AllInvoices", JSON.stringify(invoices));
+
+    // Optionally, you can also store the invoice under the user's TRN, to easily fetch it later.
+    let userInvoices = JSON.parse(localStorage.getItem(userTrn)) || [];
+    userInvoices.push(invoice);
+    localStorage.setItem(userTrn, JSON.stringify(userInvoices));
+
     alert("Invoice saved and sent!");
 }
 
@@ -90,23 +110,13 @@ function showInvoices() {
         `;
     });
 }
-// 6. Additional Functionality:
-// a. ShowUserFrequency() – Show’s user frequency based on Gender and Age Group:
-
-function showUserFrequency() {
-    const userFrequency = {
-        Male: 20,
-        Female: 15,
-        Other: 5,
-        "18-25": 10,
-        "26-35": 15,
-        "36-50": 10,
-        "50+": 5,
-    };
-
-    const dashboard = document.getElementById("dashboard");
-    dashboard.innerHTML = `<h3>User Frequency</h3>`;
-    Object.entries(userFrequency).forEach(([key, value]) => {
-        dashboard.innerHTML += `<p>${key}: ${value}</p>`;
-    });
+// c. GetUserInvoices() – displays all the invoices for a user based on trn stored in the localStorage key called RegisterData.
+function getUserInvoices() {
+    const userTrn = JSON.parse(localStorage.getItem("RegisterData"))?.trn;
+    if (!userTrn) {
+        alert("No user found. Please log in.");
+        return;
+    }
+    const userInvoices = JSON.parse(localStorage.getItem(userTrn)) || [];
+    console.log("User invoices:", userInvoices);
 }
