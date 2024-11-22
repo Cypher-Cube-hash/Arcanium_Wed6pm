@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="invoice.css">
 </head>
 <body>
-     <!-- 5.  Invoice Generation: -->
-    <!-- a. , generate an invoice with the following details after check out page: -->
+    <!-- 5. Invoice Generation: -->
+    <!-- a. Generate an invoice with the following details after checkout page -->
     <form class="w-50 mx-auto mt-5 mb-5">
         <div class="form-group">
             <label for="ids">Product ID</label>
@@ -46,10 +46,11 @@
         </thead>
         <tbody id="newtr"></tbody>
     </table>
-    <!-- b. Append this invoice to the user’s array of invoices (array of objects). Also store the invoice to localStorage with the key called AllInvoices  to access later. -->
+
     <hr>
     <div class="w-50 mx-auto">
         <h3>Invoice Summary</h3>
+        <p>TRN: <span id="trn-display">Loading...</span></p> <!-- TRN Placeholder -->
         <p>Subtotal: <span id="subtotal-amount">0.00</span></p>
         <p>Tax: 50.00</p>
         <p>Total: <span id="total-amount">0.00</span></p>
@@ -60,6 +61,11 @@
     <hr>
     <div id="dashboard" class="w-50 mx-auto"></div>
     <div id="invoice-list" class="w-50 mx-auto"></div>
+
+    <script src="invoice.js"></script> <!-- Link to your external JavaScript file -->
+</body>
+</html>
+
 
   <!-- -------------------------FOOTER CREATION------------------------- -->
   <footer class="footer">
