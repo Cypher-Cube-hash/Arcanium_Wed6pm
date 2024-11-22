@@ -19,9 +19,22 @@ body {
 
 /* Header */
 header{
-    position: relative;
-    height: 10%;
+    background-color: #90D5FF;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+header nav a:hover {
+	color: #0056b3;
+}
+
+header img.logo {
+	height: 40px;
 }
 
 .signbx{
