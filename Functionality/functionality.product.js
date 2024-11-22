@@ -26,10 +26,7 @@ list_products.forEach(element => {
 });
 
 function handleAddCart(name, price, description) {
-  console.log("Adding to cart...");
   addCart(name, price, description);
-
-  console.log("Redirecting to cart....");
   window.location.href = 'cart.html';
 }
 
