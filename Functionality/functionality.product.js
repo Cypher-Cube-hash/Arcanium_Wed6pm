@@ -8,11 +8,15 @@ list_products.forEach(element => {
             <div class="products-container-image" style="background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('${element._image}');">
             </div>
             <div class="products-container-title">
-                <div class='d-flex justify-content-between align-items-center p-1 text-light'><h4>${element._pname}</h4> <h4>$${element._price}</h4></div>
-                <div><h5 class='text-light p-1 d-flex justify-content-between align-items-center'>${element._type}</h5> <button></button></div>
+                <div class='d-flex justify-content-between align-items-center p-1 text-light'>
+                    <h4>${element._pname}</h4> 
+                    <h4>$${element._price}</h4>
+                </div>
+                <div>
+                  <h5 class='text-light p-1 d-flex justify-content-between align-items-center'>${element._type}</h5> 
             </div>
             <div class='card_fund_tag d-flex justify-content-around align-items-center p-2' 
-                onclick="addCart('${element._pname.replace(/'/g, '\\\'')}', ${element._price}, '${element._description.replace(/'/g, '\\\'')}'); window.location.href = 'cart.html';">
+                onclick="handleAddCart('${element._pname.replace(/'/g, '\\\'')}', ${element._price}, '${element._description.replace(/'/g, '\\\'')}')">
 
               <p class="text-light" style="margin-top: 16px;">Add to Cart</p>
               <i class="fa-solid fa-cart-arrow-down text-light" style="font-size: 19px;"></i>
@@ -21,10 +25,23 @@ list_products.forEach(element => {
         `;
 });
 
+function handleAddCart(name, price, description) {
+  console.log("Adding to cart...");
+  addCart(name, price, description);
+
+  console.log("Redirecting to cart....");
+  window.location.href = 'cart.html';
+}
 
 function addCart(name, price, description) {
   let user = JSON.parse(localStorage.getItem("current_user"));
   let usersList = JSON.parse(localStorage.getItem("RegistrationData"));
+
+  if (!user || !usersList) {
+    console.error("User or RegistrationData not found in localStorage.");
+    return;
+  }
+  
   let taxes = price * 0.1;
   let discount = 0.03 * price;
   let total = price + taxes - discount;
