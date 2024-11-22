@@ -58,6 +58,14 @@ class Cart {
 			item.subTotal = item.calculateSubTotal();
 		}
 	}
+
+	function navigateToCheckout() {
+		window.location.href = "CheckOut.html";
+	}
+
+	function navigateToProducts() {
+		window.location.href = "products.page.html";
+	}
 	
 	// Clear all items from the cart 
 	clearCart() {
