@@ -27,8 +27,7 @@ This project is a simple e-commerce website created for Arcanium jewelry store. 
 ## Login Credentials
 For demonstration purposes, use the following test login credentials:
 
-  -**TRN**: `
-  -**Password**: `
+  -The `TRN` & `password` is dynamically implemented when you register then you login.
 
 These credentials can be used to access the application and test its functionalities.
 
