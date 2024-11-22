@@ -12,7 +12,7 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Inria Serif', 'Inter', 'Jost', sans-serif;
 	background-color: #f8f9fa;
 	color: #333;
 }
@@ -31,20 +31,20 @@ header{
 .head_details{
     height: 100%;
     width: 100%;/* 
-    background-color: var(--highlight1); */
+    /* background-color: var(--highlight1); */
 }
 .right_header_bar{
     width: 25%;/* 
-    background-color: var(--highlight2); */
+    /* background-color: var(--highlight2); */
     padding-right: 20px;
 }
 .right_fir_header_bar{
     width: 29%;/* 
-    background-color: var(--light); */
+    /* background-color: var(--light); */
 }
 .right_fir_header_bar_flag{
     width: 60%;/* 
-    background-color: var(--highlight3); */
+    /* background-color: var(--highlight3); */
 }
 .right_sec_header_bar{
     width: 37%;
@@ -196,7 +196,7 @@ h2 {
 	color: #ffffff;
 }
 
-.price-summary button:hover) {
+.price-summary button:hover {
 	background-color: #0056b3;
 }
 
@@ -391,7 +391,7 @@ footer a:hover {
 
 /* Suggested Items */
 .Suggested-items {
-	margn-top: 20px;
+	margin-top: 20px;
 	max-width: 700px;
 	width: 100%;
 }
@@ -437,7 +437,7 @@ footer a:hover {
 
 .suggested-item p {
 	margin: 5px 0;
-	font-sizee: 0.9rem;
+	font-size: 0.9rem;
 	color: #555;
 }
 
