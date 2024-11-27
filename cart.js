@@ -9,7 +9,7 @@ import Jewelry from "./class.jewelry.js";
 
 /* ----------CART ITEM CREATION------------*/
 class CartItem {
-	Constructor(jewelryItem, quantity) {
+   constructor(jewelryItem, quantity) {
 		this.name = jewelryItem.name;
 		this.price = jewelryItem.price;
 		this.description = jewelryItem.description;
@@ -38,10 +38,10 @@ class Cart {
 		const existingItem = this.items.find(item => item.name === jewelryItem.name);
 		
 		if (existingItem) {
-			existingItem.quantity += quantity; // Update quantity 
-			existingItem.subTotal = existingItem.calculateSubTotal(); // Recalculate subtotal 
+		    existingItem.quantity += quantity; // Update quantity 
+		    existingItem.subTotal = existingItem.calculateSubTotal(); // Recalculate subtotal 
 		} else {
-			this.items.push(new CartItem(jewelryItem, quantity)); // Add new item 
+		    this.items.push(new CartItem(jewelryItem, quantity)); // Add new item 
 		}
 	}
 	
