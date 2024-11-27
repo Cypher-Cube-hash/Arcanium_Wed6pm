@@ -39,9 +39,16 @@
 			<p>Discount: $<span id="discount">0.00</span></p>
 			<p><strong>Total: $<span id="total">0.00</span></strong></p>
 			<button class="btn btn-primary" onclick="proceedToCheckout()">Proceed to Checkout</button>
-				<window.location.href = 'CheckOut.html'>
 			<button class="btn btn-secondary" onclick="continueShopping()">Continue Shopping</button>
-				<widow.location.href ='products.page.html'>
+
+			<script>
+				function proceedToCheckout() {
+					window.location.href = 'CheckOut.html';
+				}
+
+				function continueShopping() {
+					window.location.href = 'products.page.html';
+				}
 		</aside>
 	
 		<!-- Cart Management Buttons -->
