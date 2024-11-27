@@ -26,27 +26,35 @@ list_products.forEach(element => {
 });
 
 function handleAddCart(name, price, description) {
-  addCart(name, price, description);
-  window.location.href = 'cart.html';
+  const added = addCart(name, price, description);
+  if (added) {
+    window.location.href = 'cart.html';
+  } else {
+    alert("Failed to add product to cart. Please try again.");
+  }
 }
 
 function addCart(name, price, description) {
-  let user = JSON.parse(localStorage.getItem("current_user"));
-  let usersList = JSON.parse(localStorage.getItem("RegistrationData"));
+  const user = JSON.parse(localStorage.getItem("current_user"));
+  const usersList = JSON.parse(localStorage.getItem("RegistrationData"));
 
-  if (!user || !usersList) {
+  if (!user || !Array.isArray(usersList)) {
     console.error("User or RegistrationData not found in localStorage.");
-    return;
+    return false; // Indicate failure
   }
   
-  let taxes = price * 0.1;
-  let discount = 0.03 * price;
-  let total = price + taxes - discount;
+  const taxes = price * 0.1;
+  const discount = 0.03 * price;
+  const total = price + taxes - discount;
+
+  let userFound = false;
 
   usersList.forEach((person) => {
       if (person._trn == user) {
+        userFound = true;
+        
           if (!Array.isArray(person.cart)) {
-              person.cart = [];
+              person.cart = []; // Initialize cart if it doesn't exist 
           }
 
           person.cart.push({
@@ -60,4 +68,11 @@ function addCart(name, price, description) {
           console.log("Product added to cart!");
       }
   });
-}
+
+  if (!userFound) {
+    console.error("Current user not found in RegistrationData.");
+    return false; // Indicate failure 
+  }
+
+  return true; // Indicate success
+} 
