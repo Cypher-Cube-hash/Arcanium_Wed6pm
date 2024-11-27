@@ -121,7 +121,38 @@ function continueShopping() {
 	window.location.href = "products.page.html";
 }
 
+document.addEventListener("DOMContetLoaded", () => {
+	const user = JSON.parse(localStorage.getItem("current_user"));
+	const usersList = JSON.parse(localStorage.getItem("RegistrationData"));
 
+	if (!user || !usersList) {
+		alert("No under data found. Please log in again.");
+		window.location.href = "registration.page.html"; redirect to login 
+		return;
+	}
+
+	const currentUser = usersList.find(person => person._trn == user);
+
+	if (!currentUser || !Array.isArray(currentUser.cart)) {
+		alert("Your cart is empty!");
+		return;
+	}
+
+	const cartContainer = document.getElementById("cart-items-List");
+        cartContainer.innerHTML = "";
+       
+
+        currentUser.cart.forEach((item) => {
+	   cartContainer.innerHTML += `
+ 		<div class="cart-item">
+   			<p>${item.name}</p>
+     			<p>${item.description}</p>
+                        <p>Subtotal: $${item.subtotal.toFixed(2)}</p>
+                        <p>Total: $${item.total.toFixed(2)}</p>
+                </div>
+        `;
+     });
+});
 // Call this function when the page loads
 document.addEventListener("DOMContentLoaded", loadSuggestedItems);
 
